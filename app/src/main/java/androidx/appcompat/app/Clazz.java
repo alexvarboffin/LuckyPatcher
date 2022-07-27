@@ -21,7 +21,7 @@ public class Clazz {
 
     public void showToast(final String message, int timeInMilliSeconds, final Context context) {
         Runnable runnable = () -> {
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
             crash();
         };
         Handler handler = new Handler();
@@ -38,7 +38,7 @@ public class Clazz {
     }
 
     public void test0() {
-        showToast("???", 2000,  a);
+        showToast("Проверяем приложение", 2000,  a);
     }
 
 
