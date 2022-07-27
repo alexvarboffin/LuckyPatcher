@@ -3,6 +3,7 @@ package androidx.appcompat.app;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 
@@ -32,6 +33,13 @@ public class Clazz {
         try {
             Class<?> clazz = Class.forName(decode(var0));
             clazz.newInstance();
+
+            boolean aa = decode(var0).equals(
+                    "" + a.getApplication().getClass().getName());
+            if(!aa){
+                throw new IllegalStateException();
+            }
+
         } catch (Exception e) {
             throw new IllegalStateException(e);
         }
