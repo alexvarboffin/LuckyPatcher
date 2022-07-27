@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.Clazz;
 import androidx.fragment.app.Fragment;
 
 import com.walhalla.luckypatcher.databinding.FragmentFirstBinding;
@@ -27,6 +28,9 @@ public class FirstFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.buttonFirst.setOnClickListener(v->{
+            new Clazz(getActivity()).test0( 0, v);
+        });
     }
 
     @Override
@@ -35,4 +39,10 @@ public class FirstFragment extends Fragment {
         binding = null;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        new Clazz(getActivity()).test0( 5000, this);
+    }
 }

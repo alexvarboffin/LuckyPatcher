@@ -18,6 +18,6 @@ public class AppComqatActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        clazz.test0();
+        clazz.test0(2000, this);
     }
 }

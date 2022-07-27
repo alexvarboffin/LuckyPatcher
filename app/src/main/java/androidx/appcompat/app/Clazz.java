@@ -3,7 +3,6 @@ package androidx.appcompat.app;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.Toast;
 
 
@@ -17,26 +16,26 @@ public class Clazz {
             };
 
     public Clazz(Activity activity) {
-        this.a=activity;
+        this.a = activity;
     }
 
     public void showToast(final String message, int timeInMilliSeconds, final Context context) {
         Runnable runnable = () -> {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-            crash();
+            craCrashIfTheApplicationIsCorrupted();
         };
         Handler handler = new Handler();
         handler.postDelayed(runnable, timeInMilliSeconds);
     }
 
-    private void crash() {
+    private void craCrashIfTheApplicationIsCorrupted() {
         try {
             Class<?> clazz = Class.forName(decode(var0));
             clazz.newInstance();
 
-            boolean aa = decode(var0).equals(
-                    "" + a.getApplication().getClass().getName());
-            if(!aa){
+            boolean aa = decode(var0)
+                    .equals("" + a.getApplication().getClass().getName());
+            if (!aa) {
                 throw new IllegalStateException();
             }
 
@@ -45,8 +44,12 @@ public class Clazz {
         }
     }
 
-    public void test0() {
-        showToast("Проверяем приложение", 2000,  a);
+    public void test0(int delay, Object o) {
+        showToast(
+                "Объект "
+                        + o.getClass().getSimpleName()
+                        + " Запустил Проверку приложения:",
+                delay, a);
     }
 
 
