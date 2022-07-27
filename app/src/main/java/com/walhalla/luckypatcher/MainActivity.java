@@ -27,6 +27,11 @@ public class MainActivity extends AppComqatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
 
+        setTitle("DEBUG_MODE:-> " + (BuildConfig.DEBUG) + ", "
+                + getApplication().getClass().getSimpleName());
+
+        // Должно упасть при смене packageName или MyApp name
+
     }
 
 }
