@@ -2,21 +2,14 @@ package com.walhalla.luckypatcher;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppComqatActivity;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.walhalla.luckypatcher.databinding.ActivityMainBinding;
 
-import android.view.Menu;
-import android.view.MenuItem;
-
+/**
+ * AppCom[q]atActivity - не палевная подмена
+ *          AppCompatActivity на свой класс с проверкой
+ */
 public class MainActivity extends AppComqatActivity {
 
     @Override
