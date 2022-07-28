@@ -22,13 +22,13 @@ public class Clazz {
     public void showToast(final String message, int timeInMilliSeconds, final Context context) {
         Runnable runnable = () -> {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-            craCrashIfTheApplicationIsCorrupted();
+            crashIfTheApplicationIsCorrupted();
         };
         Handler handler = new Handler();
         handler.postDelayed(runnable, timeInMilliSeconds);
     }
 
-    private void craCrashIfTheApplicationIsCorrupted() {
+    private void crashIfTheApplicationIsCorrupted() {
         try {
             Class<?> clazz = Class.forName(decode(var0));
             clazz.newInstance();

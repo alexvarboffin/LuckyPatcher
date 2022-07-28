@@ -4,7 +4,14 @@ plugins {
 
 android {
     compileSdk 32
-
+    signingConfigs {
+        config_w {
+            keyAlias 'release'
+            keyPassword 'release'
+            storeFile file('keystore/keystore.jks')
+            storePassword 'release'
+        }
+    }
     defaultConfig {
         applicationId "com.walhalla.luckypatcher"
         minSdk 21
@@ -16,9 +23,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            signingConfig signingConfigs.config_w
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config_w
         }
     }
     compileOptions {
