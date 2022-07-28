@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppComqatActivity;
 import com.walhalla.luckypatcher.databinding.ActivityMainBinding;
 
 /**
- * AppCom[q]atActivity - не палевная подмена
+ * AppCom[q]atActivity - непалевная подмена
  *          AppCompatActivity на свой класс с проверкой
  */
 public class MainActivity extends AppComqatActivity {
