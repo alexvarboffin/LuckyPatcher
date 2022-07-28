@@ -1,5 +1,8 @@
 package com.walhalla.luckypatcher;
 
+import static com.walhalla.luckypatcher.BuildConfig.DEBUG;
+
+import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppComqatActivity;
@@ -20,8 +23,10 @@ public class MainActivity extends AppComqatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
 
-        setTitle("DEBUG_MODE:-> " + (BuildConfig.DEBUG) + ", "
-                + getApplication().getClass().getSimpleName());
+
+        boolean isDebug = ((this.getApplicationInfo().flags &
+                ApplicationInfo.FLAG_DEBUGGABLE) != 0);
+        setTitle("DEBUG_MODE:-> " + (isDebug) + ", " + getApplication().getClass().getSimpleName());
 
         // Должно упасть при смене packageName или MyApp name
 
